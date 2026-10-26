@@ -1,7 +1,24 @@
 
 name: Python单元测试
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'calculator.py'
+      - 'test_calculator.py'
+      - 'watch_tests.py'
+      - '.github/workflows/ci.yml'
+
+  pull_request:
+    branches: [main]
+    paths:
+      - 'calculator.py'
+      - 'test_calculator.py'
+      - 'watch_tests.py'
+      - '.github/workflows/ci.yml'
+
+  workflow_dispatch:
 
 jobs:
   test:
